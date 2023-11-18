@@ -1,0 +1,23 @@
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Año</mat-label>
+        <input matInput [(ngModel)]="anio">
+    </mat-form-field>
+    <button mat-stroked-button color="primary" (click)="obtener()">Obtener Festivos</button>
+
+</div>
+
+<div>
+    <ngx-datatable class="dark" [headerHeight]="50" [footerHeight]="50" [rowHeight]="20" [rows]="festivos"
+        [columns]="columnas" [columnMode]="modoColumna.force" [limit]="10" [selectionType]="tipoSeleccion.single"
+         [rowHeight]="'auto'">
+         <ngx-datatable-column *ngFor="let column of columnas" [name]="column.name" [prop]="column.prop">
+           
+            <ng-template ngx-datatable-cell-template let-value="value">        
+              <span *ngIf="column.prop === 'fecha'">{{ value | date:'yyyy-MM-dd' }}</span>
+              <span *ngIf="column.prop !== 'fecha'">{{ value }}</span>
+            </ng-template>
+          </ngx-datatable-column>
+
+    </ngx-datatable>
+</div>
