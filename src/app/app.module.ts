@@ -9,11 +9,15 @@ import { ReferenciasMaterialModule } from './referencias-material-module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { InicioComponent } from './componentes/inicio/inicio.component';
+import { ObtenerFestivosComponent } from './componentes/obtener-festivos/obtener-festivos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VerificarFestivoComponent
+    VerificarFestivoComponent,
+    InicioComponent,
+    ObtenerFestivosComponent
   ],
   imports: [
     BrowserModule,

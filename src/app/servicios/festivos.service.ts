@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.development';
+import { Festivo } from '../entidades/Festivo';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,8 +19,9 @@ export class FestivosService {
     let urlT = `${this.url}/verificar/${fecha.getFullYear()}/${fecha.getMonth()+1}/${fecha.getDate()}`;
     return this.http.get(urlT, {responseType: 'text'});
   }
- /*public obtener(anio: number): Observable<Festivo[]> {
+
+ public obtener(anio: number): Observable<Festivo[]> {
     let urlT = `${this.url}/obtener/${anio}`;
     return this.http.get<Festivo[]>(urlT);
-  }*/
+  }
 }
